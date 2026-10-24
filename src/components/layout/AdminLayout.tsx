@@ -75,7 +75,7 @@ export default function AdminLayout() {
           <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ${ordering.open ? 'bg-fresh-50 text-[#1f6a39]' : 'bg-stone-100 text-stone-700'}`}>
             <span className={`h-2 w-2 rounded-full ${ordering.open ? 'bg-fresh' : 'bg-stone-400'}`} /> Pre-orders {ordering.open ? 'open' : 'paused'}
           </span>
-          <div className="flex items-center gap-2"><a href="/" target="_blank" className="text-sm font-semibold text-brand-700 hover:underline">View site ↗</a><span className="hidden text-xs text-ink-500 sm:inline">{auth.email} · {auth.role}</span><button onClick={logout} className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold hover:bg-brand-50"><LogOut size={15} /> Sign out</button></div>
+          <div className="flex items-center gap-2"><a href={import.meta.env.BASE_URL} target="_blank" className="text-sm font-semibold text-brand-700 hover:underline">View site ↗</a><span className="hidden text-xs text-ink-500 sm:inline">{auth.email} · {auth.role}</span><button onClick={logout} className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold hover:bg-brand-50"><LogOut size={15} /> Sign out</button></div>
         </header>
         <main className="p-4 sm:p-6"><Outlet /></main>
       </div>

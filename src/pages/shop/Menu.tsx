@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { Button, EmptyState, useTitle } from '../../components/ui/ui'
-import { AvailabilityPill, BackLink, FoodImage, itemImage } from '../../components/shop/bits'
+import { assetUrl, AvailabilityPill, BackLink, FoodImage, itemImage } from '../../components/shop/bits'
 import { Configurator } from '../../components/shop/Configurator'
 import { useDB } from '../../data/store'
 import { formatGHS } from '../../lib/money'
@@ -48,7 +48,7 @@ export function Product() {
       <div className="mt-5 grid gap-8 md:grid-cols-2">
         <div className="overflow-hidden rounded-3xl">
           <FoodImage src={item.images[0]} alt={item.name} className="aspect-[4/3] w-full" />
-          {item.images.length > 1 && <div className="mt-4 flex gap-2">{item.images.slice(1).map((s, n) => <img key={n} src={s} alt="" loading="lazy" className="h-16 w-16 rounded-xl object-cover" />)}</div>}
+          {item.images.length > 1 && <div className="mt-4 flex gap-2">{item.images.slice(1).map((s, n) => <img key={n} src={assetUrl(s)} alt="" loading="lazy" className="h-16 w-16 rounded-xl object-cover" />)}</div>}
         </div>
         <div>
           <h1 className="text-3xl font-extrabold sm:text-4xl">{item.name}</h1>

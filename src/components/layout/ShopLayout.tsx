@@ -14,7 +14,7 @@ import { useEffect } from 'react'
 const NAV = [
   { to: '/', label: 'Home', end: true },
   { to: '/menu', label: 'Menu' },
-  { to: '/#how-it-works', label: 'How to Order', hash: true },
+  { to: `${import.meta.env.BASE_URL}#how-it-works`, label: 'How to Order', hash: true },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]

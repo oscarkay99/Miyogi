@@ -1,7 +1,7 @@
 import { CalendarCheck, ChevronRight, Clock, Heart, Leaf, MapPin, MessageCircle, ShoppingBag, ShoppingCart, Truck, UtensilsCrossed, Bike } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button, Card, useTitle } from '../../components/ui/ui'
-import { AvailabilityPill, CutoffNote, FoodImage, itemImage } from '../../components/shop/bits'
+import { assetUrl, AvailabilityPill, CutoffNote, FoodImage, itemImage } from '../../components/shop/bits'
 import { cart } from '../../data/cart'
 import { useDB } from '../../data/store'
 import { useDates } from '../../features/scheduling/hooks'
@@ -36,7 +36,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-espresso text-white">
-        <img src={s.hero.image || '/hero-dish.jpg'} alt="Fried rice with grilled chicken" className="absolute inset-y-0 right-0 -z-10 h-full w-full object-cover md:w-[52%]" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 38%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 38%)' }} />
+        <img src={assetUrl(s.hero.image)} alt="Fried rice with grilled chicken" className="absolute inset-y-0 right-0 -z-10 h-full w-full object-cover md:w-[52%]" style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 38%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 38%)' }} />
         <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-espresso/90 via-espresso/70 to-espresso/30 md:bg-gradient-to-r md:from-espresso md:via-espresso/40 md:to-transparent" />
         <div className="mx-auto max-w-6xl px-4 pt-12 pb-10 md:pt-16 md:pb-12">
           <div className="rise max-w-xl">

@@ -6,8 +6,16 @@ import { formatCutoff, formatDateLong } from '../../features/scheduling/engine'
 import { useDB } from '../../data/store'
 import type { MenuItem } from '../../data/types'
 
+/** Resolve bundled public assets under the Vite base path (including a GitHub Pages repo path). */
+export function assetUrl(src?: string) {
+  const path = src || '/hero-dish.jpg'
+  return path.startsWith('/') && !path.startsWith('//')
+    ? `${import.meta.env.BASE_URL}${path.slice(1)}`
+    : path
+}
+
 export function FoodImage({ src, alt, className = '' }: { src?: string; alt: string; className?: string }) {
-  return <img src={src || '/hero-dish.jpg'} alt={alt} loading="lazy" decoding="async" className={`object-cover ${className}`} />
+  return <img src={assetUrl(src)} alt={alt} loading="lazy" decoding="async" className={`object-cover ${className}`} />
 }
 export const itemImage = (i: MenuItem) => i.images[0]
 
